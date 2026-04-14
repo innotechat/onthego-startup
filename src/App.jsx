@@ -5,7 +5,7 @@ import {
   Cpu, DollarSign, MessageCircle, ArrowRight, CheckCircle2, 
   Menu, X, ChevronDown, PlayCircle, Loader2, Lock, FileText, Send, Phone
 } from "lucide-react";
-import PrototypeModel from "./components/PrototypeModel";
+import PrototypeModel2 from "./components/PrototypeModel2";
 
 
 // --- Sub-Components ---
@@ -448,9 +448,13 @@ export default function App() {
             </div>
             <h3 className="text-xl font-bold">Inquiry Sent!</h3>
             <p className="text-slate-400">The founding team will reach out shortly.</p>
-            <div className="pt-4 space-y-2">
-              <a href="mailto:innotechat@gmail.com" className="block text-indigo-400 font-medium">innotechat@gmail.com</a>
-              <a href="https://wa.me/918533899999" target="_blank" rel="noopener noreferrer" className="block text-emerald-400 font-medium">Verified WhatsApp Support</a>
+            <div className="pt-6 flex flex-col gap-4">
+              <a href="mailto:innotechat@gmail.com" className="w-full py-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center gap-3 hover:bg-white/10 transition-all font-semibold">
+                <Send size={18} className="text-indigo-400" /> Email Verified Founders
+              </a>
+              <a href="https://wa.me/918533899999" target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center gap-3 hover:bg-emerald-500/20 transition-all font-semibold text-emerald-400">
+                <Phone size={18} /> Direct WhatsApp Reach
+              </a>
             </div>
           </div>
         ) : (
@@ -492,12 +496,21 @@ export default function App() {
         title="Request Data Room Access"
       >
         {formState === "success" ? (
-          <div className="text-center py-8 space-y-4">
+          <div className="text-center py-8 space-y-6">
             <div className="w-16 h-16 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Lock className="text-indigo-400" size={32} />
             </div>
-            <h3 className="text-xl font-bold">Access Requested</h3>
-            <p className="text-slate-400">A security link to the Virtual Data Room will be sent to your work email shortly after verification.</p>
+            <h3 className="text-xl font-bold">Access Verification</h3>
+            <p className="text-slate-400 text-sm">Please connect with our compliance team to receive your secure Data Room credentials.</p>
+            
+            <div className="flex flex-col gap-3">
+              <a href="mailto:innotechat@gmail.com?subject=Data Room Access Request - OnTheGo" className="w-full py-4 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center gap-3 hover:bg-white/10 font-bold">
+                 <Send size={20} className="text-indigo-400" /> Request via Email
+              </a>
+              <a href="https://wa.me/918533899999?text=I'm interested in the OnTheGo Seed Round. Can I get access to the Data Room?" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-emerald-600 rounded-2xl flex items-center justify-center gap-3 font-bold">
+                 <Phone size={20} /> Connect via WhatsApp
+              </a>
+            </div>
           </div>
         ) : (
           <div className="space-y-6">
@@ -530,7 +543,7 @@ export default function App() {
       {/* PROTOTYPE MODAL */}
       <AnimatePresence>
         {isPrototypeOpen && (
-          <PrototypeModel onClose={() => setIsPrototypeOpen(false)} />
+          <PrototypeModel2 onClose={() => setIsPrototypeOpen(false)} />
         )}
       </AnimatePresence>
 
